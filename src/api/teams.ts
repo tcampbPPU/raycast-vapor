@@ -32,7 +32,11 @@ export async function switchTeam(teamId: number): Promise<void> {
         body: JSON.stringify({ team_id: teamId })
     })
 
-    await LocalStorage.setItem('current_team', teamId.toString());
+    await setCurrentTeam(teamId)
 
     return Promise.resolve()
+}
+
+export async function setCurrentTeam(teamId: number): Promise<void> {
+    await LocalStorage.setItem('current_team', teamId.toString())
 }

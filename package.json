@@ -18,7 +18,13 @@
       "title": "List Teams",
       "description": "List all teams",
       "mode": "view"
-    }
+    },
+    {
+      "name": "list-projects",
+      "title": "List Projects",
+      "description": "List projects for the selected team",
+      "mode": "view"
+    }    
   ],
   "preferences": [
     {

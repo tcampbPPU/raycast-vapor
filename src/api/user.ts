@@ -10,6 +10,7 @@ export type User = {
     ownedTeams: Array<Team>
     avatar_url: string
     uses_two_factor_authentication: boolean
+    is_sandboxed: boolean
 }
 
 export async function getUser(): Promise<User> {
