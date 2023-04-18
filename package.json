@@ -8,12 +8,6 @@
   "license": "MIT",
   "commands": [
     {
-      "name": "index",
-      "title": "Show List and Detail",
-      "description": "Template for showing a static list and a detail view",
-      "mode": "view"
-    },
-    {
       "name": "list-teams",
       "title": "List Teams",
       "description": "List all teams",
