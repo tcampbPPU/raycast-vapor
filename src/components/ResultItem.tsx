@@ -4,7 +4,7 @@ import { Database } from "../api/databases";
 import { Domain } from "../api/domains";
 import { Network } from "../api/networks";
 import { Project } from "../api/projects";
-import ResultPreview from "./ResultPreview";
+import ResultActions from "./ResultActions";
 
 export interface Props {
   id: string | number;
@@ -19,7 +19,7 @@ export default function ResultItem(props: Props) {
       key={props.id}
       title={props.title}
       icon={{ value: "list-icon.png", tooltip: "List Icon" }}
-      actions={<ResultPreview {...props} />}
+      actions={<ResultActions {...props} />}
     />
   );
 }

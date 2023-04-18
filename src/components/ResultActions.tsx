@@ -12,7 +12,7 @@ export interface Props {
   result: Cache | Database | Domain | Network | Project;
 }
 
-export default function ResultItem(props: Props) {
+export default function ResultActions(props: Props) {
   const urlBases = {
     cache: "https://vapor.laravel.com/app/caches/",
     database: "https://vapor.laravel.com/app/databases/",
