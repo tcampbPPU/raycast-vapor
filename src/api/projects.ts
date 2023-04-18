@@ -1,6 +1,5 @@
-import { LocalStorage } from "@raycast/api";
 import { request } from "../lib/request";
-import { getUser } from "./user";
+import { getTeamId } from "../lib/helpers";
 
 export type Project = {
   id: number;
@@ -41,14 +40,7 @@ export type Project = {
 export type Projects = Array<Project>;
 
 export async function getProjects(): Promise<Projects> {
-  let currentTeamId;
-  currentTeamId = await LocalStorage.getItem<string>("current_team");
-
-  if (!currentTeamId) {
-    const user = await getUser();
-    await LocalStorage.setItem("current_team", user.current_team_id.toString());
-    currentTeamId = user.current_team_id.toString();
-  }
+  const currentTeamId = await getTeamId();
 
   return await request<Projects>(`teams/${currentTeamId}/projects`);
 }

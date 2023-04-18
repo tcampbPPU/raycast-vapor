@@ -21,7 +21,7 @@ export default function Command() {
                   onAction={() => {
                     console.log(project.id);
                     open(`https://vapor.laravel.com/app/projects/${project.id}`);
-                  }}                  
+                  }}
                 />
               </ActionPanel>
             }
