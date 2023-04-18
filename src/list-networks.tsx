@@ -1,6 +1,7 @@
-import { ActionPanel, List, Action, open } from "@raycast/api";
+import { List } from "@raycast/api";
 import { useCachedPromise } from "@raycast/utils";
 import { getNetworks } from "./api/networks";
+import ResultItem from "./components/ResultItem";
 
 export default function Command() {
   const { data: networks, isLoading } = useCachedPromise(getNetworks, [], { execute: true });
@@ -10,22 +11,7 @@ export default function Command() {
       {!isLoading &&
         networks &&
         networks.map((network) => (
-          <List.Item
-            key={network.id}
-            title={network.name}
-            icon={{ value: "list-icon.png", tooltip: "network Icon" }}
-            actions={
-              <ActionPanel>
-                <Action
-                  title="Show Details"
-                  onAction={() => {
-                    console.log(network.id);
-                    open(`https://vapor.laravel.com/app/networks/${network.id}`);
-                  }}
-                />
-              </ActionPanel>
-            }
-          />
+          <ResultItem key={network.id} id={network.id} title={network.name} result={network} type={"network"} />
         ))}
 
       {isLoading && <List.Item title="Loading..." />}

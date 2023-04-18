@@ -1,6 +1,7 @@
-import { ActionPanel, List, Action, open } from "@raycast/api";
+import { List } from "@raycast/api";
 import { useCachedPromise } from "@raycast/utils";
 import { getDomains } from "./api/domains";
+import ResultItem from "./components/ResultItem";
 
 export default function Command() {
   const { data: domains, isLoading } = useCachedPromise(getDomains, [], { execute: true });
@@ -10,22 +11,7 @@ export default function Command() {
       {!isLoading &&
         domains &&
         domains.map((domain) => (
-          <List.Item
-            key={domain.id}
-            title={domain.zone}
-            icon={{ value: "list-icon.png", tooltip: "domain Icon" }}
-            actions={
-              <ActionPanel>
-                <Action
-                  title="Show Details"
-                  onAction={() => {
-                    console.log(domain.id);
-                    open(`https://vapor.laravel.com/app/domains/${domain.id}`);
-                  }}
-                />
-              </ActionPanel>
-            }
-          />
+          <ResultItem key={domain.id} id={domain.id} title={domain.zone} result={domain} type={"domain"} />
         ))}
 
       {isLoading && <List.Item title="Loading..." />}

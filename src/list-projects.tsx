@@ -1,6 +1,7 @@
-import { ActionPanel, List, Action, open } from "@raycast/api";
+import { List } from "@raycast/api";
 import { useCachedPromise } from "@raycast/utils";
 import { getProjects } from "./api/projects";
+import ResultItem from "./components/ResultItem";
 
 export default function Command() {
   const { data: projects, isLoading } = useCachedPromise(getProjects, [], { execute: true });
@@ -10,22 +11,7 @@ export default function Command() {
       {!isLoading &&
         projects &&
         projects.map((project) => (
-          <List.Item
-            key={project.id}
-            title={project.name}
-            icon={{ value: "list-icon.png", tooltip: "Project Icon" }}
-            actions={
-              <ActionPanel>
-                <Action
-                  title="Show Details"
-                  onAction={() => {
-                    console.log(project.id);
-                    open(`https://vapor.laravel.com/app/projects/${project.id}`);
-                  }}
-                />
-              </ActionPanel>
-            }
-          />
+          <ResultItem key={project.id} id={project.id} title={project.name} result={project} type={"project"} />
         ))}
 
       {isLoading && <List.Item title="Loading..." />}

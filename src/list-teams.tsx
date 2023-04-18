@@ -1,5 +1,4 @@
-import { ActionPanel, List, Action } from "@raycast/api";
-import { LocalStorage } from "@raycast/api";
+import { ActionPanel, List, Action, popToRoot, Alert, confirmAlert } from "@raycast/api";
 import { useCachedPromise } from "@raycast/utils";
 import { getTeams, switchTeam } from "./api/teams";
 
@@ -14,15 +13,27 @@ export default function Command() {
           <List.Item
             key={team.id}
             title={team.name}
-            icon={{ value: "list-icon.png", tooltip: "Team Icon" }}
+            icon={{ value: "list-icon.png", tooltip: "List Icon" }}
             actions={
               <ActionPanel>
                 <Action
-                  title="Show Details"
+                  title="Switch Team"
                   onAction={async () => {
                     await switchTeam(team.id);
-                    const storedTeam = await LocalStorage.getItem<string>("current_team");
-                    console.log(storedTeam);
+
+                    const options: Alert.Options = {
+                      title: "Switched Team",
+                      message: "Your data is now being fetched from the new team",
+
+                      primaryAction: {
+                        title: "OK",
+                        onAction: () => {
+                          popToRoot();
+                        },
+                      },
+                    };
+
+                    await confirmAlert(options);
                   }}
                 />
               </ActionPanel>

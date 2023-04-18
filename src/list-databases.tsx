@@ -1,6 +1,7 @@
-import { ActionPanel, List, Action, open } from "@raycast/api";
+import { List } from "@raycast/api";
 import { useCachedPromise } from "@raycast/utils";
 import { getDatabases } from "./api/databases";
+import ResultItem from "./components/ResultItem";
 
 export default function Command() {
   const { data: databases, isLoading } = useCachedPromise(getDatabases, [], { execute: true });
@@ -10,22 +11,7 @@ export default function Command() {
       {!isLoading &&
         databases &&
         databases.map((database) => (
-          <List.Item
-            key={database.id}
-            title={database.name}
-            icon={{ value: "list-icon.png", tooltip: "database Icon" }}
-            actions={
-              <ActionPanel>
-                <Action
-                  title="Show Details"
-                  onAction={() => {
-                    console.log(database.id);
-                    open(`https://vapor.laravel.com/app/databases/${database.id}`);
-                  }}
-                />
-              </ActionPanel>
-            }
-          />
+          <ResultItem key={database.id} id={database.id} title={database.name} result={database} type={"database"} />
         ))}
 
       {isLoading && <List.Item title="Loading..." />}

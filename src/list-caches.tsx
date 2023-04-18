@@ -1,6 +1,7 @@
-import { ActionPanel, List, Action, open } from "@raycast/api";
+import { List } from "@raycast/api";
 import { useCachedPromise } from "@raycast/utils";
 import { getCaches } from "./api/caches";
+import ResultItem from "./components/ResultItem";
 
 export default function Command() {
   const { data: caches, isLoading } = useCachedPromise(getCaches, [], { execute: true });
@@ -10,22 +11,7 @@ export default function Command() {
       {!isLoading &&
         caches &&
         caches.map((cache) => (
-          <List.Item
-            key={cache.id}
-            title={cache.name}
-            icon={{ value: "list-icon.png", tooltip: "cache Icon" }}
-            actions={
-              <ActionPanel>
-                <Action
-                  title="Show Details"
-                  onAction={() => {
-                    console.log(cache.id);
-                    open(`https://vapor.laravel.com/app/caches/${cache.id}`);
-                  }}
-                />
-              </ActionPanel>
-            }
-          />
+          <ResultItem key={cache.id} id={cache.id} title={cache.name} result={cache} type={"cache"} />
         ))}
 
       {isLoading && <List.Item title="Loading..." />}
