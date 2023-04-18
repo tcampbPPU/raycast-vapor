@@ -1,6 +1,7 @@
-import { ActionPanel, Detail, List, Action, open } from "@raycast/api";
+import { ActionPanel, List, Action } from "@raycast/api";
+import { LocalStorage } from "@raycast/api";
 import { useCachedPromise } from "@raycast/utils";
-import { getTeams } from "./api/teams";
+import { getTeams, switchTeam } from "./api/teams";
 
 export default function Command() {
  const {
@@ -19,8 +20,10 @@ export default function Command() {
                     <ActionPanel>
                         <Action 
                             title="Show Details"
-                            onAction={() => {
-                                open('https://vapor.laravel.com/');
+                            onAction={async () => {
+                                await switchTeam(team.id);
+                                const storedTeam = await LocalStorage.getItem<string>('current_team');
+                                console.log(storedTeam);                            
                             }}
                         />
                     </ActionPanel>
