@@ -30,15 +30,15 @@ export default function ResultActions(props: Props) {
         <Action.OpenInBrowser url={url} />
       </ActionPanel.Section>
       <ActionPanel.Section>
-        <Action.CopyToClipboard content={url} title="Copy Link" shortcut={{ modifiers: ["cmd"], key: "." }} />
-      </ActionPanel.Section>
-      <ActionPanel.Section>
           <Action.Push
             title="Show Details"
             shortcut={{ modifiers: ["cmd"], key: "p" }}
             target={<Detail markdown={JSON.stringify(props.result, null, 2)} />}
           />
       </ActionPanel.Section>
+      <ActionPanel.Section>
+        <Action.CopyToClipboard content={url} title="Copy Link" shortcut={{ modifiers: ["cmd"], key: "." }} />
+      </ActionPanel.Section>      
     </ActionPanel>
   );
 }
