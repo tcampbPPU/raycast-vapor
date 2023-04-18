@@ -4,6 +4,7 @@ import { getTeamId } from "../lib/helpers";
 export type Database = {
   id: number;
   team_id: number;
+  name: string;
   // TODO: Add the rest of the fields
 };
 

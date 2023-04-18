@@ -16,9 +16,33 @@
     {
       "name": "list-projects",
       "title": "List Projects",
-      "description": "List projects for the selected team",
+      "description": "List projects for the current team",
       "mode": "view"
-    }    
+    },
+    {
+      "name": "list-databases",
+      "title": "List Databases",
+      "description": "List databases for the current team",
+      "mode": "view"
+    },
+    {
+      "name": "list-networks",
+      "title": "List Networks",
+      "description": "List networks for the current team",
+      "mode": "view"
+    },
+    {
+      "name": "list-domains",
+      "title": "List Domains",
+      "description": "List domains for the current team",
+      "mode": "view"
+    },
+    {
+      "name": "list-caches",
+      "title": "List Caches",
+      "description": "List caches for the current team",
+      "mode": "view"
+    }
   ],
   "preferences": [
     {
