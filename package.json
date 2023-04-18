@@ -3,7 +3,7 @@
   "name": "laravel-vapor",
   "title": "laravel-vapor",
   "description": "Interacts with Laravel Vapor API",
-  "icon": "command-icon.png",
+  "icon": "vapor.png",
   "author": "tcampbPPU",
   "license": "MIT",
   "commands": [
