@@ -3,16 +3,14 @@ import { useCachedPromise } from "@raycast/utils";
 import { getUser } from "./api/user";
 
 export default function Command() {
+  //   // call our getUser api call
+  //  const {
+  //     data: user,
+  //     isLoading,
+  //     mutate,
+  //   } = useCachedPromise(getUser, [], { execute: true });
 
-//   // call our getUser api call
-//  const {
-//     data: user,
-//     isLoading,
-//     mutate,
-//   } = useCachedPromise(getUser, [], { execute: true });
-
-//   console.log(user);
-
+  //   console.log(user);
 
   return (
     <List>
