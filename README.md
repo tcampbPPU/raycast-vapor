@@ -1,6 +1,6 @@
 # Raycast Extension for Laravel Vapor
 
-This extension allows you to quickly access your Laravel Vapor data from Raycast.
+This extension allows you to quickly access your Laravel Vapor data from Raycast. When searching for a project, database, network, domain or cache, you can select one Raycast will open that item in your browser in the proper location in the Vapor dashboard.
 
 ## Requirements
 You must first provide a API token so the extension can access your Vapor data. 
@@ -8,7 +8,6 @@ You must first provide a API token so the extension can access your Vapor data.
 You can generate a token [here](https://vapor.laravel.com/app/account/api-tokens).
 
 Once you have copied your API token, you can set it in Raycast when it prompts you to do so.
-
 
 ## Usage
 
