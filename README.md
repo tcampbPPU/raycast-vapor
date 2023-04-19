@@ -1,6 +1,6 @@
 # Raycast Extension for Laravel Vapor
 
-This extension allows you to quickly access your Laravel Vapor data from Raycast. When searching for a project, database, network, domain or cache, you can select one Raycast will open that item in your browser in the proper location in the Vapor dashboard.
+This extension allows you to quickly access your Laravel Vapor data from Raycast. When searching for a project, database, network, domain or cache, you can select one and Raycast will open that item in your browser in the proper location in the Vapor dashboard.
 
 ## Requirements
 You must first provide a API token so the extension can access your Vapor data. 
@@ -22,25 +22,23 @@ All the rest of the commands will be scoped to the current team, either from you
 
 #### List Projects
 
-<!-- TODO -->
-
+This command will list all the projects in your current team. 
 
 #### List Databases
 
-<!-- TODO -->
+This command will list all the databases in your current team.
 
 #### List Networks
 
-<!-- TODO -->
+This command will list all the networks in your current team.
 
 #### List Domains
 
-<!-- TODO -->
+This command will list all the domains in your current team.
 
 #### List Caches
 
-<!-- TODO -->
-
+This command will list all the caches in your current team.
 
 
 ### Credits

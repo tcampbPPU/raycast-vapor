@@ -12,11 +12,62 @@ export interface Props {
 }
 
 function cacheDetails(cache: Cache) {
-  return `${cache.id}`;
+  let markdown = `# ${cache.name}`;
+
+  const table = [
+    { name: "ID", value: cache.id },
+    { name: "Region", value: cache.region },
+    { name: "Status", value: cache.status },
+    { name: "Type", value: cache.type },
+    { name: "Size", value: cache.instance_class },
+    { name: "Scale", value: cache.scale },
+    { name: "Created At", value: new Date(cache.created_at).toLocaleString() },
+    { name: "Updated At", value: new Date(cache.updated_at).toLocaleString() },
+  ];
+
+  markdown += "\n\n\n";
+  markdown += "| Name | Value |";
+  markdown += "\n";
+  markdown += "| --- | --- |";
+  markdown += "\n";
+
+  table.forEach((row) => {
+    markdown += `| ${row.name} | ${row.value} |`;
+    markdown += "\n";
+  });
+
+  return markdown;
 }
 
 function databaseDetails(database: Database) {
-  return `${database.id}`;
+  let markdown = `# ${database.name}`;
+
+  const table = [
+    { name: "ID", value: database.id },
+    { name: "Region", value: database.region },
+    { name: "Status", value: database.status },
+    { name: "Type", value: database.type },
+    { name: "Size", value: database.instance_class },
+    { name: "Storage", value: database.storage },
+    { name: "Backup Retention Period", value: database.backup_retention_period },
+    { name: "Is Public", value: database.is_public ? "Yes" : "No" },
+    { name: "Endpoint", value: database.endpoint },
+    { name: "Created At", value: new Date(database.created_at).toLocaleString() },
+    { name: "Updated At", value: new Date(database.updated_at).toLocaleString() },
+  ];
+
+  markdown += "\n\n\n";
+  markdown += "| Name | Value |";
+  markdown += "\n";
+  markdown += "| --- | --- |";
+  markdown += "\n";
+
+  table.forEach((row) => {
+    markdown += `| ${row.name} | ${row.value} |`;
+    markdown += "\n";
+  });
+
+  return markdown;
 }
 
 function domainDetails(domain: Domain) {
