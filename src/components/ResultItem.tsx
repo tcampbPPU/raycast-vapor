@@ -5,6 +5,7 @@ import { Domain } from "../api/domains";
 import { Network } from "../api/networks";
 import { Project } from "../api/projects";
 import ResultActions from "./ResultActions";
+import ResultDetails from "./ResultDetails";
 
 export interface Props {
   id: string | number;
@@ -20,6 +21,7 @@ export default function ResultItem(props: Props) {
       title={props.title}
       icon={{ value: "list-icon.png", tooltip: "List Icon" }}
       actions={<ResultActions {...props} />}
+      detail={<ResultDetails {...props} />}
     />
   );
 }

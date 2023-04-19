@@ -7,7 +7,7 @@ export default function Command() {
   const { data: domains, isLoading } = useCachedPromise(getDomains, [], { execute: true });
 
   return (
-    <List>
+    <List isShowingDetail>
       {!isLoading &&
         domains &&
         domains.map((domain) => (

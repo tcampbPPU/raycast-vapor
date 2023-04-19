@@ -9,8 +9,8 @@
   "commands": [
     {
       "name": "list-teams",
-      "title": "List Teams",
-      "description": "List all teams",
+      "title": "Switch Teams",
+      "description": "Switch Active Team",
       "mode": "view"
     },
     {

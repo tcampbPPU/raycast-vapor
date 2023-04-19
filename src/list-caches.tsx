@@ -7,7 +7,7 @@ export default function Command() {
   const { data: caches, isLoading } = useCachedPromise(getCaches, [], { execute: true });
 
   return (
-    <List>
+    <List isShowingDetail>
       {!isLoading &&
         caches &&
         caches.map((cache) => (

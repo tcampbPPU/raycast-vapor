@@ -7,7 +7,7 @@ export default function Command() {
   const { data: projects, isLoading } = useCachedPromise(getProjects, [], { execute: true });
 
   return (
-    <List>
+    <List isShowingDetail>
       {!isLoading &&
         projects &&
         projects.map((project) => (

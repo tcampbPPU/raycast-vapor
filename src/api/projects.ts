@@ -20,6 +20,8 @@ export type Project = {
   is_sandboxed: boolean;
   queued_for_deletion: boolean;
   last_deployed_at: Date | null;
+  created_at: Date;
+  updated_at: Date;
   cloud_provider: {
     id: number;
     team_id: number;

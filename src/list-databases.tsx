@@ -7,7 +7,7 @@ export default function Command() {
   const { data: databases, isLoading } = useCachedPromise(getDatabases, [], { execute: true });
 
   return (
-    <List>
+    <List isShowingDetail>
       {!isLoading &&
         databases &&
         databases.map((database) => (

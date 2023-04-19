@@ -7,7 +7,7 @@ export default function Command() {
   const { data: networks, isLoading } = useCachedPromise(getNetworks, [], { execute: true });
 
   return (
-    <List>
+    <List isShowingDetail>
       {!isLoading &&
         networks &&
         networks.map((network) => (
