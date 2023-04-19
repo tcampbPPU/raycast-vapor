@@ -14,7 +14,7 @@ Once you have copied your API token, you can set it in Raycast when it prompts y
 
 ### Commands
 
-#### List Teams
+#### Switch Team
 
 With this command you can list all the teams you own and the teams you are a member of. Laravel tracks a `current_team_id` and all of your data is scoped to that team. When using this command you can select a team to set as your current team. Similar to the Laravel Vapor CLI.
 

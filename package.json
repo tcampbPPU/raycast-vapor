@@ -8,38 +8,38 @@
   "license": "MIT",
   "commands": [
     {
-      "name": "list-teams",
-      "title": "Switch Teams",
+      "name": "switch-team",
+      "title": "Switch Team",
       "description": "Switch Active Team",
       "mode": "view"
     },
     {
       "name": "list-projects",
-      "title": "List Projects",
+      "title": "Projects",
       "description": "List projects for the current team",
       "mode": "view"
     },
     {
       "name": "list-databases",
-      "title": "List Databases",
+      "title": "Databases",
       "description": "List databases for the current team",
       "mode": "view"
     },
     {
       "name": "list-networks",
-      "title": "List Networks",
+      "title": "Networks",
       "description": "List networks for the current team",
       "mode": "view"
     },
     {
       "name": "list-domains",
-      "title": "List Domains",
+      "title": "Domains",
       "description": "List domains for the current team",
       "mode": "view"
     },
     {
       "name": "list-caches",
-      "title": "List Caches",
+      "title": "Caches",
       "description": "List caches for the current team",
       "mode": "view"
     }
