@@ -45,7 +45,6 @@ All the rest of the commands will be scoped to the current team, either from you
 
 
 ### Credits
-The Vapor logo is from [here](https://github.com/vscode-icons/vscode-icons/blob/master/icons/file_type_vapor.svg) and you can convert to PNG using:
-```bash
-qlmanage -t -s 512 -o . vapor.svg
-```
+The Vapor logo is from [here](https://github.com/vscode-icons/vscode-icons/blob/master/icons/file_type_vapor.svg)
+
+> To convert the SVG to PNG: `qlmanage -t -s 512 -o . vapor.svg`
