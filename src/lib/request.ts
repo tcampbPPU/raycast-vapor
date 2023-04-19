@@ -32,6 +32,11 @@ export async function request<T>(path: string, options: RequestOptions = { metho
     throw new Error(JSON.stringify(error));
   }
 
+  // check if we are unauthorized and redirect to login
+  if (response.url === "https://vapor.laravel.com/login") {
+    throw new Error("Unauthorized, please check your token");
+  }
+
   // IDK only seeing this when using the PUT method to switch teams
   if (response.headers.get("content-type")?.includes("text/html")) {
     return response.text() as unknown as T;
