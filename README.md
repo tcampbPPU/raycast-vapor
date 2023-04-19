@@ -1,4 +1,4 @@
-# Laravel Vapor Raycast Extension
+# Raycast Extension for Laravel Vapor
 
 This extension allows you to quickly access your Laravel Vapor data from Raycast.
 
