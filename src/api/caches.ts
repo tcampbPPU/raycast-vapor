@@ -28,7 +28,7 @@ export type Cache = {
     role_sync: boolean;
     sns_topic_arn: string;
     network_limit: number;
-  };  
+  };
   network: Network;
 };
 

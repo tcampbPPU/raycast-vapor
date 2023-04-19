@@ -8,7 +8,7 @@ export type Database = {
   cloud_provider_id: number;
   network_id: number;
   name: string;
-  type: string
+  type: string;
   region: string;
   database_id: string;
   username: string;
@@ -41,7 +41,6 @@ export type Database = {
   };
   network: Network;
 };
-
 
 export type Databases = Array<Database>;
 
