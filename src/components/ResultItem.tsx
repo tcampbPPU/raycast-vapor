@@ -1,9 +1,9 @@
+import type { Cache } from "../types/caches";
+import type { Database } from "../types/databases";
+import type { Domain } from "../types/domains";
+import type { Network } from "../types/networks";
+import type { Project } from "../types/projects";
 import { List } from "@raycast/api";
-import { Cache } from "../api/caches";
-import { Database } from "../api/databases";
-import { Domain } from "../api/domains";
-import { Network } from "../api/networks";
-import { Project } from "../api/projects";
 import ResultActions from "./ResultActions";
 import ResultDetails from "./ResultDetails";
 
